@@ -1,0 +1,67 @@
+.product-img{
+    border-radius: 20px;
+    margin-left: 120px;
+    margin-top: -100px;
+    width: 40%;
+    height: 10%;
+}
+
+.size-container{
+    width: 360px;
+}
+
+
+.main{
+    margin-bottom: -270px;
+}
+
+h3{
+    font-size: 15px;
+}
+
+.card-container{
+    display: flex;
+}
+
+.price{
+    margin-top: -575px;
+    margin-left: 662px;
+}
+.size{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.product-title{
+    padding-bottom: 40px;
+    font-weight: 200;
+    font-size: 40px;
+    margin-left: 660px;
+}
+
+.card-btn button {
+    border-radius: 40px;
+    display: block;
+    height: 80px;
+    width: 400px; /* Make buttons full width if needed */
+    margin: 10px 660px; /* Space between buttons */
+    padding: 5px;
+    border: 0.5; /* Remove border */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer;
+
+  }
+  
+  /* Style for the first button */
+  .card-btn button:first-child {
+    margin-top: 370px;
+    background-color: white;
+    color: black; /* Set text color */
+  }
+  
+  /* Style for the second button */
+  .card-btn button:last-child {
+    background-color: black;
+    color: white; /* Set text color */
+  }
+
