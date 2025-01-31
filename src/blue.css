@@ -1,0 +1,137 @@
+.bg-blue{
+    width: 100%;
+    height: 800px;
+    margin-top: -200px;
+    background: linear-gradient(180deg, #000000, #000000, #003282);
+}
+
+.title-page {
+    position: absolute;
+    top: 300px; /* Adjusted for clarity */
+    left: 29%;
+    background:linear-gradient(180deg, #003282, #0041a3, #ff4d00);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 100px;
+    background-size: 100% 300%;
+    font-weight: 200;
+    text-align: center;
+    margin: 0;
+    animation: slideUp 1.5s ease-out forwards,  gradient-vertical-move 3s linear forwards;
+    opacity: 0; 
+  }
+  
+  @keyframes gradient-vertical-move {
+    0% {
+      background-position: 50% 0%; /* Start from the top */
+    }
+    100% {
+      background-position: 50% 80%; /* Move to the bottom */
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .collection-container{
+    display: grid; 
+    margin-left: 130px;
+    grid-template-columns: repeat(3, 0.3fr); 
+    gap: 0px; 
+    margin-top: 56px;
+
+    padding: 20px; 
+  }
+
+.collection{
+width: 300px;
+margin-bottom: 30px;
+  }
+  
+.img-card{
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  transition: transform 0.6s ease, opacity 0.3s ease;
+}
+  
+h2.title-page2{
+  margin-top: 100px;
+  text-align: center;
+  font-size: 90px;
+  background: linear-gradient(120deg, #ff4800, #ff4800, #c4c4c4, #002aff,  #002aff  ); /* Gradient colors */
+  -webkit-background-clip: text; /* For Safari */
+  background-clip: text; /* For other browsers */
+  color: transparent; /* Make text color transparent so that background shows through */
+}
+
+
+button.btn-primary {
+  position: relative;
+  width: 190px;
+  height: 45px;
+  background-color: #fafafa;
+  border: none;
+  color: #000000;
+  padding: 10px;
+  margin-top: 32px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  margin-left: 130px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  outline: none; /* Ensures no blue outline on focus */
+}
+
+button.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(120deg, #ff4000, #fb4e0a, #ff8757);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+button.btn-primary:hover::before {
+  transform: translateX(0);
+}
+
+button.btn-primary:hover {
+  color: #fff; /* Ensures the text color changes on hover */
+  background-color: transparent; /* Keeps the button's background transparent on hover */
+}
+
+button.btn-primary:focus {
+  outline: none; /* Removes focus outline */
+  box-shadow: none; /* Removes any default focus shadow */
+}
+
+button.btn-primary:active {
+  background-color: transparent; /* Removes any background change on click */
+  box-shadow: none; /* Ensures no shadow on active */
+}
+
+button.btn-primary span {
+  position: relative;
+  z-index: 2; /* Keeps text in front of the background animation */
+  transition: color 0.5s ease-in-out;
+}
+
+button.btn-primary:hover span {
+  color: #fff;
+}

@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import { useState , useEffect , useRef } from 'react';
 import img1 from'./img/Nike-Blueprint1.jpg'
 import img2 from'./img/Nike-Blueprint2.jpg'
@@ -58,7 +58,7 @@ function SliderItem(){
       return(
           <div>
               <div className='items2'>
-              <h1>Shop By Sport</h1>
+              <h1>Our New Collection</h1>
               <div className='btn2'>
               <button className="prev-btn-move" onClick={leftScroll}>
               &#10094;
@@ -74,7 +74,7 @@ function SliderItem(){
           {products.map((product, index) => (
             <div key={index} className="product-card">
               <img src={product.image} alt={product.name} className="slider-image2" />
-              <button className="product-label">{product.name}</button>
+             <Link to="/newCollection"> <button className="product-label">{product.name}</button></Link>
             </div>
           ))}
           </div>

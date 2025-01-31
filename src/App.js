@@ -3,6 +3,7 @@ import MainPage from "./main.jsx";
 import PruductsComponent from "./prodcts.jsx";
 import ProductDetail from "./productDetail.jsx";
 import Payment from "./bag.jsx";
+import Collection from "./collection.jsx";
 import {
   BrowserRouter as Router,
   Route,
@@ -43,6 +44,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/product/:index" element={<ProductDetail />} />
       <Route path="/payment/:index" element={<Payment />} />
+      <Route path="/newCollection" element={<Collection />} />
     </Routes>
   );
 }

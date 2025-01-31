@@ -1,36 +1,33 @@
 h1{
-white-space: none;
+    white-space: none;
     padding-top: 20px;
     margin-left: 50px;
     font-size: 30px;
 }
 .items{
-    margin-bottom: 20px;
-    margin-top: 300px;
+    margin-top: 370px;
     display: flex;
 }
 
 .images {
-    margin-top: 20px;
-    margin-left: 30px;
+    margin-left: -40px;
     display: flex;
     overflow-x: auto; 
     scroll-behavior: smooth;
     gap: 20px;
     padding: 20px 0;
     scroll-snap-type: x mandatory; 
-    width: 100%; 
+    width: 140%; 
   }
   
   .product-card {
-
     flex: 0 0 350px; 
     scroll-snap-align: start;
     text-align: center;
     position: relative;
   }
   
-  .slider-image2 {
+.slider-image2 {
   width: 100%;
   height: 400px; 
   object-fit: cover; 
@@ -58,11 +55,11 @@ white-space: none;
     border: 0;
     justify-content: space-between;
     margin-left: 700px;
-    margin-top: 90px;
-    margin-bottom: 20px;
+    margin-top: 60px;
+    margin-bottom: -20px;
 }
 .next-btn-move{
-    margin-right: -60px;
+    background-color: rgb(243, 243, 243);
     padding-left: 15px;
     padding-right: 15px;
     color: rgb(255, 255, 255);
@@ -70,8 +67,10 @@ white-space: none;
     border-radius:50px ;
     font-size: 30px;
     font-weight: 100;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease ,color 0.6s ease-in-out;
 }
 .prev-btn-move{
+    background-color: rgb(243, 243, 243);
     margin-right: 10px;
     padding-left: 15px;
     padding-right: 15px;
@@ -80,9 +79,12 @@ white-space: none;
     border-radius: 50px;
     font-size: 30px;
     font-weight: 100;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease ,color 0.6s ease-in-out;
 }
 
 .next-btn-move:hover , .prev-btn-move:hover{
-    background-color: rgb(212, 212, 212);
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    color:rgb(255, 77, 0) ;
 
 }

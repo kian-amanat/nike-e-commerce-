@@ -9,16 +9,115 @@ body {
   height: 100vh; /* Full height of the viewport */
   width: 100vw;  /* Full width of the viewport */
   position: relative; /* Ensures positioning for any content */
+
 }
-/* body.main-page {
-  background-image: url('./img/bgAir1.jpeg');
-  background-color: transparent;
+/* .container{
+  height: 3000px;
+} */
+
+/* Filter Section Styling */
+.filter-section {
+  position: sticky;
+  top: 0;
+  margin-top: 200px;
+  margin-left: -70px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 200px;
+  height: 1000px; /* Or set a max-height if needed */
+  overflow-y: auto; /* Enables vertical scrolling */
 }
 
-body.product-page {
-  background-color: #f5f5f5;
-  background-image: none;
-} */
+
+
+.filter-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Filter Group Styling */
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  font-size: 1em;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-options input {
+  margin-right: 5px;
+}
+
+.filter-options label {
+  font-size: 0.9em;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Color Checkbox Styling */
+.color-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: inline-block;
+  transition: border-color 0.3s;
+}
+
+.color-box:hover {
+  border-color: #464646;
+}
+
+
+.price-range {
+  display: flex;
+  gap: 10px;
+}
+
+.price-input {
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 45%;
+}
+
+.apply-filters {
+  width: 100%;
+  padding: 12px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: scale 0.3s;
+}
+
+.apply-filters:hover {
+  scale: 1.05;
+}
+
+
 
 
 .title{
@@ -26,6 +125,12 @@ body.product-page {
   justify-content: space-between;
 }
 
+.NavIcon2{
+  color: #000000;
+  margin-top: -3px;
+  width: 18px;
+  height: 18px;
+}
 h1.title-bg1{
   margin-top: 140px;
 margin-left: 140px;
@@ -68,8 +173,33 @@ a{
 
 
 h1{
-margin-top: 70px;
+margin-top: 40px;
+margin-bottom: -90px;
+color: #000000;
 }
+
+
+.explore-title {
+  margin-top: 100px;
+  margin-left: 0px;
+  text-align: center;
+  font-size: 90px;
+  background: linear-gradient(120deg, #ff1e00, #ff9130, #ffca45 ); /* Gradient colors */
+  -webkit-background-clip: text; /* For Safari */
+  background-clip: text; /* For other browsers */
+  color: transparent; /* Make text color transparent so that background shows through */
+  transform: translateY(90px); 
+  opacity: 0; 
+  transition: transform 1.8s ease 0.5s, opacity 0.8s ease 0.5s; 
+}
+
+
+
+.explore-title.animate {
+  transform: translateY(0); 
+  opacity: 1;
+}
+
 
 
 .product-card {
@@ -108,10 +238,12 @@ margin-top: 70px;
   margin-bottom: 50px;
 }
 .search-filter {
-
-  margin-right: -800px;
+  width: 800px;
+  margin-top: -10px;
+  margin-right: -550px;
 
 }
+
 
 .logo img{
   width: 20%;
@@ -143,96 +275,170 @@ margin-top: 70px;
 }
 
 .search-icon {
-  
-  margin-right: 15px;
+  border-radius: 100%;
+  padding: 9.5px;
+  background-color: #ffffff;
+  margin-right: 145px;
   position: absolute;
-  top: 57%; 
-  right: 10px; 
+  top: 60%; 
+  right: 7px; 
   transform: translateY(-50%); 
   color: #000000; 
   font-size: 16px; 
   cursor: pointer; 
+  transition: background-color 0.3s ease-in-out;
+
 }
+
+
+.search-icon:hover{
+  background-color: #e1e1e1;
+}
+
 .form-select{
-margin-top: -40px;
-margin-left: 900px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 15px;
+  margin-top: -80px;
+  margin-bottom: 70px;
+  margin-left: 890px;
+  transition: color 0.2s ease-in-out ;
 }
 
+.form-select:hover{
+  color: #ff4d00;
+}
 
-.product-container {
-  margin-left: 20px;
+div.product-container {
+  box-shadow: none;
+  margin-left: 150px;
+  margin-top: -1000px;
   display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
+  grid-template-columns: repeat(3, 0.3fr); 
+  gap: 10px; 
   padding: 20px; 
 }
 
 
 .product-card {
-  background-color: #fff; /* White background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   overflow: hidden; /* Prevent overflow */
-  transition: transform 0.2s; /* Smooth scaling on hover */
+  transition: transform 0.6s ease, opacity 0.3s ease;
+}
+.product-card:hover{
+  transform: scale(1.05);
+}
+.product-card img {
+  width: 100%; 
+  height: 100px; 
+  object-fit: cover;
+  transition: transform 0.6s ease, opacity 0.3s ease;
 }
 
-
-
-.product-card img {
+.product-card img:hover {
   width: 100%; 
   height: 200px; 
   object-fit: cover;
+  transform: scale(1.1);
 }
 
 /* Card Body Styling */
-.card-body {
-  height: 200px;
+div.card-body {
+  background: linear-gradient(180deg, #ffffff, #ffffff ,#ffffff);
+  height: 130px;
   padding: 15px; 
   text-align: left; 
 }
 
 /* Product Title */
-.card-title {
-  font-size: 1.2em; /* Larger font size */
-  font-weight: bold; /* Bold text */
-  color: #333; /* Dark color */
+h5.card-title {
+  font-size: 1.4em; /* Larger font size */
+  font-weight:500; /* Bold text */
+  color: #030303; /* Dark color */
   margin: 10px 0; /* Margin above and below title */
 }
 
 /* Product Description */
-.card-text {
+p.card-text {
   font-size: 0.9em; /* Smaller font size */
   color: #777; /* Gray color */
-  margin-bottom: 10px; /* Margin below description */
+  margin-bottom: 0px; /* Margin below description */
+  margin-top: 50px;
+  padding-right: 0;
 }
 
 
 .card-text strong {
+  font-weight: 300;
   font-size: 1.1em; 
   color: #000; 
 }
-
-
-.btn-primary {
-  background-color: #ffffff; 
-  color: #000000; 
-  border: 1; 
-  border-radius: 10px; 
-  padding: 10px 15px; 
-  font-size: 0.9em; 
-  transition: background-color 0.3s; 
-  margin-left: 200px;
+.card-info{
+  margin-top: -20px;
+  display: flex;
 }
 
-.btn-primary:hover {
-  border:none;
+button.btn-primary {
+  position: relative;
+  width: 190px;
+  height: 45px;
+  background-color: #fafafa;
+  border: none;
+  color: #000000;
+  padding: 10px;
+  margin-top: 32px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  margin-left: 130px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  outline: none; /* Ensures no blue outline on focus */
+}
+
+button.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(120deg, #ff4000, #fb4e0a, #ff8757);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+button.btn-primary:hover::before {
+  transform: translateX(0);
+}
+
+button.btn-primary:hover {
+  color: #fff; /* Ensures the text color changes on hover */
+  background-color: transparent; /* Keeps the button's background transparent on hover */
+}
+
+button.btn-primary:focus {
+  outline: none; /* Removes focus outline */
+  box-shadow: none; /* Removes any default focus shadow */
+}
+
+button.btn-primary:active {
+  background-color: transparent; /* Removes any background change on click */
+  box-shadow: none; /* Ensures no shadow on active */
+}
+
+button.btn-primary span {
+  position: relative;
+  z-index: 2; /* Keeps text in front of the background animation */
+  transition: color 0.5s ease-in-out;
+}
+
+button.btn-primary:hover span {
   color: #fff;
-  background-color: #005bcb; 
 }
 
-.bg-img {
 
-}
 
 /* 
 @media (max-width: 768px) {
