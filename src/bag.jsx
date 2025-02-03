@@ -46,7 +46,7 @@ function Payment(){
     }
   };
   
-  // Call the function with a sample product ID
+
 
   
 
@@ -65,7 +65,7 @@ function payment(){
          <section className="container search-filter">
          <div className="row">
          <div className="col-md-3 position-relative">
-  <input type="text"  ref={searchRef} className="form-control search-input" placeholder="Search..." />
+  <input type="text"  ref={searchRef} className="form-control search-input" placeholder="        Search..." />
   <i className="fas fa-search search-icon"></i>
 </div>
          </div>
@@ -114,8 +114,9 @@ function payment(){
 <div>
 
 </div>
-
+<div className='quanty'>
 <QuantityButton />
+</div>
        </section>
        <SliderMove/>
        <Footer/>

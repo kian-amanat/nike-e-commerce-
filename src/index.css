@@ -276,8 +276,8 @@ color: #000000;
 
 .search-icon {
   border-radius: 100%;
-  padding: 9.5px;
-  background-color: #ffffff;
+  padding: 9.8px;
+  background-color: #d7d7d7;
   margin-right: 145px;
   position: absolute;
   top: 60%; 
@@ -292,7 +292,7 @@ color: #000000;
 
 
 .search-icon:hover{
-  background-color: #e1e1e1;
+  background-color: #ffffff;
 }
 
 .form-select{

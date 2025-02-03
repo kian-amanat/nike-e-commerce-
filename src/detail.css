@@ -1,9 +1,9 @@
 .product-img{
     border-radius: 20px;
     margin-left: 120px;
-    margin-top: -100px;
-    width: 40%;
-    height: 10%;
+    margin-top: 0px;
+    width: 38%;
+    height:550px;
 }
 
 .size-container{
@@ -24,19 +24,21 @@ h3{
 }
 
 .price{
-    margin-top: -575px;
-    margin-left: 662px;
+    margin-top: -275px;
+    margin-left: 640px;
+    font-weight:800 ;
+    margin-bottom: 0;
 }
 .size{
     margin-left: 30px;
-    margin-top: 30px;
+    margin-top: 100px;
 }
 
 .product-title{
     padding-bottom: 40px;
     font-weight: 200;
     font-size: 40px;
-    margin-left: 660px;
+    margin-left: 640px;
 }
 
 .card-btn button {
@@ -44,8 +46,10 @@ h3{
     display: block;
     height: 80px;
     width: 400px; /* Make buttons full width if needed */
-    margin: 10px 660px; /* Space between buttons */
+    margin-left: 640px;
+    margin-top: -400px;
     padding: 5px;
+    margin-bottom: 0;
     border: 0.5; /* Remove border */
     font-size: 16px; /* Adjust font size */
     cursor: pointer;
@@ -54,7 +58,7 @@ h3{
   
   /* Style for the first button */
   .card-btn button:first-child {
-    margin-top: 370px;
+    margin-top: 60px;
     background-color: white;
     color: black; /* Set text color */
   }
@@ -63,5 +67,8 @@ h3{
   .card-btn button:last-child {
     background-color: black;
     color: white; /* Set text color */
+    margin-bottom: 0;
+    margin-top: 30px;
+
   }
 

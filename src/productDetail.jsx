@@ -66,7 +66,7 @@ function ProductDetail() {
                 onKeyPress={matchValue}
                 ref={searchRef}
                 className="form-control search-input"
-                placeholder="Search..."
+                placeholder="       Search..."
               />
               <i className="fas fa-search search-icon"></i>
             </div>
@@ -74,11 +74,11 @@ function ProductDetail() {
         </section>
         <div className="cart-info">
           <div>
-            <a href="/payment">
+            <a href="/register">
               <i className="fas fa-shopping-bag bag-icon"></i>{" "}
             </a>
-            {count}
           </div>
+          
         </div>
       </header>
       <section className="main">
@@ -102,7 +102,7 @@ function ProductDetail() {
                   marginTop: "10px",
                 }}
               >
-                {product.size.map((size, idx) => (
+                {product.sizes.map((size, idx) => (
                   <button
                     onClick={() => selectSize(size)} // Pass size to selectSize
                     key={idx}

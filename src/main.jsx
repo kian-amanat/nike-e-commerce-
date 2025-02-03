@@ -8,6 +8,7 @@ import SliderItem from "./slider-item.jsx";
 import DropDown from "./dropdown.jsx";
 import nike from "./img/nike.png";
 import "./index.css";
+import ShoeAR from "./shoeAr.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import products from "./data.js";
@@ -15,11 +16,12 @@ import img1 from "./img/bgAir1.jpeg";
 import img2 from "./img/bgAir2.jpg";
 import img3 from "./img/orange2.jpg";
 
+
 function MainPage() {
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
   const [priceRange, setPriceRange] = useState([0, 200]);
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [filteredProducts, setFilteredProducts] = useState(products || []);
   const [active, setActive] = useState(false);
   const searchRef = useRef(null);
   const category = useRef(null);
@@ -27,6 +29,11 @@ function MainPage() {
   const headerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const titleRef = useRef(null);
+
+
+
+
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,13 +51,18 @@ function MainPage() {
 
     return () => {
       if (titleRef.current) {
-        observer.unobserve(titleRef.current); // Clean up observer
+        observer.unobserve(titleRef.current); 
       }
     };
   }, []);
 
 
   const handleFilter = () => {
+    if (!Array.isArray(products)) {
+      setFilteredProducts([]); 
+      return;
+    }
+    
     const filtered = products.filter((product) => {
       const matchesColor =
         selectedColor === "" || product.color === selectedColor;
@@ -81,16 +93,16 @@ function MainPage() {
 
   function matchValue() {
     let searchValue = searchRef.current.value.toLowerCase().trim();
-    if (searchValue !== "") {
+    if (searchValue !== "" && Array.isArray(products)) {
       const matchedProducts = products.filter((product) =>
         product.title.toLowerCase().includes(searchValue)
       );
       setFilteredProducts(matchedProducts);
     } else {
-      setFilteredProducts(products);
+      setFilteredProducts(products || []);
     }
   }
-
+  
   const handlePriceChange = (e, index) => {
     const newRange = [...priceRange];
     console.log(newRange);
@@ -119,11 +131,16 @@ function MainPage() {
                 onKeyPress={matchValue}
                 ref={searchRef}
                 className="form-control search-input"
-                placeholder="Search..."
+                placeholder="       Search..."
               />
             </div>
           </div>
         </section>
+        <div>
+            <a href="/register">
+              <i className="fas fa-shopping-bag bag-icon"></i>{" "}
+            </a>
+          </div>
       </header>
 
       <div className="explore">
@@ -139,6 +156,8 @@ function MainPage() {
       <section className="container">
         <div className="row" id="product-list">
           <SliderMove />
+      
+    <ShoeAR />
           <h1
         ref={titleRef}
         className={`explore-title ${isVisible ? 'animate' : ''}`}
@@ -207,34 +226,32 @@ function MainPage() {
 
   <button className="apply-filters" onClick={handleFilter}>Apply Filters</button>
 </div>
-          <div className="product-container">
-            {filteredProducts.length > 0 ? (
-              filteredProducts.map((product, index) => (
-                <Link to={`/product/${index}`} key={index}>
-                  <div className="product-card">
-                    <img
-                      src={product.image}
-                      className="card-img-top"
-                      alt={product.title}
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{product.title}</h5>
-                      <div className="card-info">
-                        <p className="card-text">
-                          <strong>${product.price}</strong>
-                        </p>
-                        <button className="btn-primary">
-                          <span>Add to cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))
-            ) : (
-              <p>No products found.</p>
-            )}
+<div className="product-container">
+{console.log("Filtered Products:", Array.isArray(filteredProducts), filteredProducts)}
+  {Array.isArray(filteredProducts) && filteredProducts.length > 0 ? (
+    filteredProducts?.map((product, index) => (
+      <Link to={`/product/${index}`} key={index}>
+        <div className="product-card">
+          <img src={product.image} className="card-img-top" alt={product.title} />
+          <div className="card-body">
+            <h5 className="card-title">{product.title}</h5>
+            <div className="card-info">
+              <p className="card-text">
+                <strong>${product.price}</strong>
+              </p>
+              <button className="btn-primary">
+                <span>Add to cart</span>
+              </button>
+            </div>
           </div>
+        </div>
+      </Link>
+    ))
+  ) : (
+    <p>No products found.</p>
+  )}
+</div>
+
           <SliderItem />
         </div>
       </section>

@@ -135,3 +135,33 @@ button.btn-primary span {
 button.btn-primary:hover span {
   color: #fff;
 }
+
+.title-Ar{
+  color: #000000;
+  text-align: center;
+  font-size: 40px;
+  margin-left: -10px;
+  margin-bottom: 40px;
+  margin-top: 200px;
+  font-weight: 200;
+}
+span.Ar{
+  color: #0080ff;
+  font-size: 70px;
+  font-weight: 400;
+}
+.ar-btn{
+  width: 130px;
+  height: 50px;
+  border-radius: 10px;
+  border: 0px;
+  background: linear-gradient(180deg , #004386 , #0080ff );
+  color: #fafafa;
+  margin-left: 480px;
+  margin-bottom: 40px;
+  transition: transform ease-in-out 0.5s;
+}
+
+.ar-btn:hover{
+  transform: scale(1.1)
+}
